@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "esnext", //Define a versão do ECMAScript para a qual o código será compilado
+    "module": "commonjs", //Define o sistema de módulos como CommonJS
+    "rootDir": "./src", //Diretório raiz dos arquivos de origem
+    "outDir": "./dist", //Diretório de saída para os arquivos compilados
+    "strict": true, //Verifica todos os tipos antes de compilar
+    "esModuleInterop": true, //Habilita a interoperabilidade entre módulos CommonJS e ES
+    "forceConsistentCasingInFileNames": true, //Força a consistência na capitalização dos nomes dos arquivos
+    "emitDeclarationOnly": false, //Emite apenas os arquivos de declaração (.d.ts) sem gerar código JavaScript
+    "experimentalDecorators": true, //Habilita o uso de decoradores
+  },
+  "include": ["src"] //Inclui todos os arquivos dentro do diretório src
+}
