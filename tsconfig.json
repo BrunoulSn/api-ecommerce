@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true, //Força a consistência na capitalização dos nomes dos arquivos
     "emitDeclarationOnly": false, //Emite apenas os arquivos de declaração (.d.ts) sem gerar código JavaScript
     "experimentalDecorators": true, //Habilita o uso de decoradores
+    "emitDecoratorMetadata": true, //Emite metadados de decoradores para os arquivos de saída
   },
   "include": ["src"] //Inclui todos os arquivos dentro do diretório src
 }

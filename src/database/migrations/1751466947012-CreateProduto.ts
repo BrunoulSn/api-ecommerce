@@ -17,28 +17,14 @@ export class CreateProduto1751466947012 implements MigrationInterface {
                     {
                         name: "nome",
                         type: "varchar",
-                        isNullable: false,
-                    },
-                    {
-                        name: "descricao",
-                        type: "text",
+                        length: "255",
                         isNullable: false,
                     },
                     {
                         name: "preco",
                         type: "decimal",
-                        precision: 10,
-                        scale: 2,
-                        isNullable: false,
-                    },
-                    {
-                        name: "quantidade_estoque",
-                        type: "int",
-                        isNullable: false,
-                    },
-                    {
-                        name: "categoria_id",
-                        type: "int",
+                        precision: 10, // Total de dígitos
+                        scale: 2, // Número de dígitos após o ponto decimal
                         isNullable: false,
                     },
                 ],
