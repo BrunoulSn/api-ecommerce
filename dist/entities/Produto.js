@@ -11,29 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Produto = void 0;
 const typeorm_1 = require("typeorm");
-// Importa os decoradores Entity e PrimaryGeneratedColumn do TypeORM para definir a entidade Produto
 let Produto = class Produto {
-    // @PrimaryGeneratedColumn() é um decorador do TypeORM que indica que a coluna é uma chave primária gerada automaticamente.
     id;
     nome;
-    descricao;
     preco;
-    quantidadeEstoque;
-    categoriaId;
-    constructor(id, nome, descricao, preco, quantidadeEstoque, categoriaId) {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.preco = preco;
-        this.quantidadeEstoque = quantidadeEstoque;
-        this.categoriaId = categoriaId;
-    }
+    descricao;
+    ncm;
 };
 exports.Produto = Produto;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)()
-    // @PrimaryGeneratedColumn() é um decorador do TypeORM que indica que a coluna é uma chave primária gerada automaticamente.
-    ,
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], Produto.prototype, "id", void 0);
 __decorate([
@@ -41,22 +28,17 @@ __decorate([
     __metadata("design:type", String)
 ], Produto.prototype, "nome", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Produto.prototype, "descricao", void 0);
-__decorate([
     (0, typeorm_1.Column)("decimal", { precision: 10, scale: 2 }),
     __metadata("design:type", Number)
 ], Produto.prototype, "preco", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Produto.prototype, "quantidadeEstoque", void 0);
+    __metadata("design:type", String)
+], Produto.prototype, "descricao", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Produto.prototype, "categoriaId", void 0);
+    __metadata("design:type", String)
+], Produto.prototype, "ncm", void 0);
 exports.Produto = Produto = __decorate([
-    (0, typeorm_1.Entity)("produtos"),
-    __metadata("design:paramtypes", [Number, String, String, Number, Number, Number])
+    (0, typeorm_1.Entity)("produtos")
 ], Produto);

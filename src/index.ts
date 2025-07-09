@@ -1,14 +1,23 @@
-import express from 'express'; //importação do express
-import 'reflect-metadata'; //importação do reflect-metadata para o TypeORM
-import routeProdutos from "./routes/produto.routes"; //importação das rotas de produto
-require('dotenv').config(); //importação do dotenv para carregar variáveis de ambiente
+import express from "express";
+import 'reflect-metadata';
+import routeProdutos from './routes/produto.routes'
+import routeUser from './routes/usuario.routes'
+import { AppDataSource } from "./database/data-source";
+require('dotenv').config()
 
-const app = express(); //instância do express
 
-app.use(express.json()); //middleware para interpretar requisições JSON
+AppDataSource.initialize()
+.then(() => {
+        const app = express()
+        app.use(express.json())
+        app.use('/produtos',routeProdutos)
+        app.use('/usuarios', routeUser)
+        app.listen(process.env.API_PORT, () => {
+            console.log("servidor rodando na porta ",process.env.API_PORT)
+        })
+    })
+    .catch((error) => {
+        console.error("Banco de dados não conectado. ", error)
+    })
 
-app.use('/produtos', routeProdutos); //Define a rota base para as rotas de produto
 
-app.listen(process.env.API_PORT, () => {
-  console.log(`Servidor rodando na porta ${process.env.API_PORT}`);
-}); //inicia o servidor na porta 3000
